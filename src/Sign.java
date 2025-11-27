@@ -30,9 +30,9 @@ public class Sign {
                 s += code.substring((width * i), width * (i + 1));
                 s += ";";
             }
-            if (code.length() % width == 0) { //to prevent semicolon after last width
-                return s.substring(0, s.length() - 1);
-            }
+             //to prevent semicolon after last width
+            return s.substring(0, s.length() - 1);
+
         }
 
         else for (int i = 0; i < numberOFLines() - 1; i++) { //same here for odd numbers if it isn't divisible
@@ -40,9 +40,7 @@ public class Sign {
             s += ";";
 
         }
-        if (code.length() % width == 0) {
-            return s.substring(0, s.length() - 1);
-        } else s += code.substring(numberOFLines() + width);
+        s += code.substring(numberOFLines() + width);
         return s; //return final value
     }
 
